@@ -52,6 +52,8 @@ This project is related to the task as an intern software engineer in the Roboti
 Clone this repo
 ```bash
 git clone https://github.com/yukebrillianth/opencv-object-tracking-with-distance-measurement.git distance-measuring
+
+cd distance-measuring
 ```
 
 Make a build directory
