@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    ".blade.php": "html",
+    "iostream": "cpp",
+    "string_view": "cpp",
+    "ostream": "cpp"
+  }
+}
