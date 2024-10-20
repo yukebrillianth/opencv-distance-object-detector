@@ -6,6 +6,20 @@
 
 This project is related to the task as an intern software engineer in the Robotics UKM Research Team (IRIS) week 2, Computer Vision chapter.
 
+- [Object Tracking By Color With Distance Measurement By Polynomial Regression](#object-tracking-by-color-with-distance-measurement-by-polynomial-regression)
+  - [TO-DO: Implementing Polynomial Regression for Distance Calculation](#to-do-implementing-polynomial-regression-for-distance-calculation)
+    - [Step 1: Data Collection](#step-1-data-collection)
+    - [Step 2: Regression Analysis](#step-2-regression-analysis)
+    - [Step 3: Code Implementation](#step-3-code-implementation)
+    - [Step 4: Testing and Calibration](#step-4-testing-and-calibration)
+  - [Current Progress](#current-progress)
+  - [Next Steps](#next-steps)
+  - [Dependencies](#dependencies)
+  - [How to Use](#how-to-use)
+    - [1. Installation](#1-installation)
+    - [2. Usage](#2-usage)
+  - [Calibration Data](#calibration-data)
+
 ## TO-DO: Implementing Polynomial Regression for Distance Calculation
 
 ### Step 1: Data Collection
