@@ -45,7 +45,7 @@ int main()
      * @brief Configure Trackbar window
      *
      */
-    int y[2] = {15, 165}, u[2] = {59, 168}, v[2] = {0, 50};
+    int y[2] = {40, 255}, u[2] = {0, 255}, v[2] = {0, 100};
     namedWindow("Control");
 
     createTrackbar("Ymin", "Control", &y[0], 255);
@@ -65,7 +65,7 @@ int main()
         cvtColor(frame, frame_yuv, COLOR_BGR2YUV);
 
         Mat frame_thres;
-        inRange(frame, Scalar(y[0], u[0], v[0]), Scalar(y[1], u[1], v[1]), frame_thres);
+        inRange(frame_yuv, Scalar(y[0], u[0], v[0]), Scalar(y[1], u[1], v[1]), frame_thres);
 
         vector<vector<Point>> contours;
         findContours(frame_thres, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
