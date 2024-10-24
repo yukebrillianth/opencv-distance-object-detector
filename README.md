@@ -22,7 +22,10 @@ This project is related to the task as an intern software engineer in the Roboti
   - [Calibration Data](#calibration-data)
 
 ## Demo
-![](demo.mp4)
+
+https://github.com/user-attachments/assets/e4524a0b-ffca-4f21-9e84-1798322f5573
+
+
 
 ## TO-DO: Implementing Polynomial Regression for Distance Calculation
 
