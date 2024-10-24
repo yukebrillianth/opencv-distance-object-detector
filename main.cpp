@@ -87,35 +87,40 @@ int main()
                 }
             }
             Moments m = moments(contours[largestContourAreaI]);
-            double mArea = m.m00;
-            double mX = m.m10;
-            double mY = m.m01;
 
-            Point2f centroid(mX / mArea, mY / mArea);
+            // Avoid devide by 0
+            if (m.m00 != 0)
+            {
+                double mArea = m.m00;
+                double mX = m.m10;
+                double mY = m.m01;
 
-            Point2f circleLine;
-            float radius;
+                Point2f centroid(mX / mArea, mY / mArea);
 
-            // Hitung min enclosing circle
-            minEnclosingCircle(contours[largestContourAreaI], circleLine, radius);
+                Point2f circleLine;
+                float radius;
 
-            // float distance = (200 * 22) / radius;
-            float distance = calculateDistance(radius);
-            cout << "Radius: " << radius << endl;
+                // Hitung min enclosing circle
+                minEnclosingCircle(contours[largestContourAreaI], circleLine, radius);
 
-            // gambar enclosing circle
-            circle(frame, circleLine, (int)radius, Scalar(0, 255, 255), 2);
+                // float distance = (200 * 22) / radius;
+                float distance = calculateDistance(radius);
+                cout << "Radius: " << radius << endl;
 
-            // show info
-            string distanceText = "Distance: " + to_string(int(distance)) + " cm";
-            string areaText = "Area: " + to_string(int(largestArea));
-            putText(frame, distanceText, Point(circleLine.x - radius, circleLine.y - radius - 10),
-                    FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0, 255, 0), 2);
-            putText(frame, areaText, Point(circleLine.x - radius, circleLine.y - radius - 30),
-                    FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0, 255, 0), 2);
+                // gambar enclosing circle
+                circle(frame, circleLine, (int)radius, Scalar(0, 255, 255), 2);
 
-            // Gambar titik tengah
-            circle(frame, centroid, 3, Scalar(0, 0, 255), -1);
+                // show info
+                string distanceText = "Distance: " + to_string(int(distance)) + " cm";
+                string areaText = "Area: " + to_string(int(largestArea));
+                putText(frame, distanceText, Point(circleLine.x - radius, circleLine.y - radius - 10),
+                        FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0, 255, 0), 2);
+                putText(frame, areaText, Point(circleLine.x - radius, circleLine.y - radius - 30),
+                        FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0, 255, 0), 2);
+
+                // Gambar titik tengah
+                circle(frame, centroid, 3, Scalar(0, 0, 255), -1);
+            }
         }
 
         // Show thresholded image
